@@ -9,4 +9,14 @@ def readdata():
         master.append(entry)
     fin.close()
     return master
-               
+
+def undone(master_data):
+    i=1
+    undone=[]
+    for data in master_data:
+        if data[3]!="done":
+            undone.append(data)
+        else:
+            a="do nothing"
+    undone.pop(0)
+    return undone
