@@ -1,4 +1,7 @@
 def readdata():
+    """Reads date from the master.csv and returns a list of tuples containing data
+         from each line of the csv"""
+
     fname="master.csv"
     master=[]
     fin=open(fname)
@@ -11,6 +14,7 @@ def readdata():
     return master
 
 def undone(master_data):
+    """ Separates data from the master list that's yet to be taken care of"""
     i=1
     undone=[]
     for data in master_data:
@@ -20,3 +24,4 @@ def undone(master_data):
             a="do nothing"
     undone.pop(0)
     return undone
+
