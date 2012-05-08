@@ -36,7 +36,9 @@ def createfile(dates_data,undone_data):
         data from undone_data"""
     for date in dates_data:
         filename=date+".csv"
+        top="Serial Number"+","+"Name"+","+"Phone number"+","+"comments"+","+"Next call"+"\n"
         fout=open(filename, "w")
+        fout.write(top)
         for data in undone_data:
             if (date==data[4]):
                 record = data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+"\n"
