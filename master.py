@@ -35,10 +35,10 @@ def createfile(dates_data,undone_data):
     """ Creates file based on the data from dates_data and matching it with
         data from undone_data"""
     for date in dates_data:
+        filename=date+".csv"
+        fout=open(filename, "w")
         for data in undone_data:
             if (date==data[4]):
-                filename=date+".csv"
-                fout=open(filename, "w")
                 record = data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+"\n"
                 fout.write(record)
         fout.close()
