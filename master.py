@@ -8,7 +8,7 @@ def readdata():
     for record in fin:
         record = record.strip() #strips non-printing characters
         data = record.split(",")
-        entry=(data[0],data[1],data[2],data[3],data[4])
+        entry=(data[0],data[1],data[2],data[3],data[4],data[5])
         master.append(entry)
     fin.close()
     return master
@@ -36,12 +36,12 @@ def createfile(dates_data,undone_data):
         data from undone_data"""
     for date in dates_data:
         filename=date+".csv"
-        top="Serial Number"+","+"Name"+","+"Phone number"+","+"comments"+","+"Next call"+"\n"
+        top="Serial Number"+","+"Name"+","+"Phone number"+","+"comments"+","+"Next call"+","+"Time"+"\n"
         fout=open(filename, "w")
         fout.write(top)
         for data in undone_data:
             if (date==data[4]):
-                record = data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+"\n"
+                record = data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+","+data[5]+"\n"
                 fout.write(record)
         fout.close()
 
